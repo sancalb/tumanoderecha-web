@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { business } from '@/lib/site';
 
@@ -25,9 +26,19 @@ export default function Navigation() {
           aria-label="Tu Mano Derecha, inicio"
           onClick={() => setOpen(false)}
         >
-          <span className="mark">
-            TM<span>.</span>D
-          </span>
+          <Image
+            src="/images/Icono Principal_tmd.png"
+            alt="Tu Mano Derecha"
+            width={52}
+            height={52}
+            priority
+            style={{
+              width: '52px',
+              height: '52px',
+              objectFit: 'contain',
+              flexShrink: 0,
+            }}
+          />
 
           <span className="brand-name">
             TU MANO DERECHA
@@ -36,6 +47,7 @@ export default function Navigation() {
         </a>
 
         <nav
+          id="primary-navigation"
           className={open ? 'nav-links open' : 'nav-links'}
           aria-label="Navegación principal"
         >
